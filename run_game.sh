@@ -12,3 +12,4 @@ javac GuessingGame.java
 echo "running..."
 java GuessingGame
 echo "Done!"
+echo "Removing class files..."
