@@ -9,3 +9,4 @@ cd "${NAME}_labb"
 echo "Running game from $(pwd)"
 echo "compiling..."
 javac GuessingGame.java
+echo "running..."
