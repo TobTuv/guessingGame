@@ -3,4 +3,5 @@
 NAME="Tobias_Tuveback"
 
 echo "${NAME} program"
-mkdir "${NAME}_labb"
+mkdir -p "${NAME}_labb"
+cp --update=none ./*.java "${NAME}_labb"
