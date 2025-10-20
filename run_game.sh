@@ -1,6 +1,5 @@
 #!/bin/bash
 
-FIRST_NAME="Tobias"
-LAST_NAME="Tuvebäck"
+NAME="Tobias_Tuveback"
 
-echo "Name: $FIRST_NAME $LAST_NAME"
+echo "$NAME program"
