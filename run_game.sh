@@ -2,4 +2,5 @@
 
 NAME="Tobias_Tuveback"
 
-echo "$NAME program"
+echo "${NAME} program"
+mkdir "${NAME}_labb"
