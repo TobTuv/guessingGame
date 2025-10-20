@@ -14,3 +14,4 @@ java GuessingGame
 echo "Done!"
 echo "Removing class files..."
 rm -f *.class
+ls
