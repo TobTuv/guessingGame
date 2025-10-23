@@ -1,0 +1,46 @@
+1. En pull är att man hämtar de senaste ändringarna från remote repository till sitt lokala. Push är att man laddar upp sitt lokala repository till remote repository.
+
+2. Log används när man vill se historiken i tidigare commits. Status använder man för att se vad i sitt repository som finns tillgängligt för commit eller add.
+
+3. En Git branch är en separat gren inom samma repository som används för att kunna göra ändringar utan att påverka huvudgrenen (main/master). Brancher är viktiga då de gör det möjligt att experimentera och utveckla branchens innehåll utan att riskera att förstöra något i master/main.
+
+4. De sätt som finns för att rulla tillbaka koden till ett tidigare tillstånd är:
+
+- git restore Game.java (Tar bort ändringar som inte ännu är commitade. 
+Kan användas om man t.ex testat något som inte fungerar. Ger ingen output)
+
+
+- git reset --soft HEAD~1 (Ångrar senaste commit men behåller ändringarna staged i arbetskatalogen. Kan också vara HEAD~2/3/4 osv, beroende på hur många commits man vill ångra. 
+Kan användas om man t.ex skrivit fel commit)
+
+tobias@BOOK-EI3HIF17BT:~/game-of-continents$ git reset --soft HEAD~1
+tobias@BOOK-EI3HIF17BT:~/game-of-continents$ git status
+On branch add-help
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   instructions.txt
+
+
+-git reset HEAD~1 (Även kallad reset mixed. Flyttar tillbaka till en tidigare commit och tar bort ändringar i staged, men behåller ändringar i arbetskatalogen. 
+Kan användas om man t.ex lagt till för många filer med git add . och vill ta bort dom från staging area utan att förlora ändringarna)
+
+tobias@BOOK-EI3HIF17BT:~/game-of-continents$ git reset HEAD~1
+Unstaged changes after reset:
+M       continents.csv
+M       instructions.txt
+
+
+-git reset --hard HEAD~1 (Tar bort både commit och ändringar. 
+Kan användas om man gjort ändringar som inte längre behövs)
+
+tobias@BOOK-EI3HIF17BT:~/game-of-continents$ git reset --hard HEAD~1
+HEAD is now at 57e783b created instructions
+
+
+-git revert <commit-id> (Skapar ett nytt commit som rullar tillbaka koden till ett tidigare commit. 
+Kan användas om man vill fixa ett misstag utan att förstöra historiken)
+
+tobias@BOOK-EI3HIF17BT:~/game-of-continents$ git revert 87956fd
+[add-help 6440613] Revert "add more countries"
+ 1 file changed, 2 deletions(-)
+
